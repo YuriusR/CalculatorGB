@@ -1,10 +1,12 @@
 package YuriusR.calculatorgb.modelView;
 
-public class CalculatorImplementation implements Calculator{
-    @Override
-    public float performOperations(float arg1, float arg2, Operations operations) {
+import YuriusR.calculatorgb.ui.ResultView;
 
-        switch (operations){
+public abstract class CalculatorImplementation implements Calculator {
+
+    public double performOperations(double arg1, double arg2, Operations operations, ResultView resultView) {
+
+        switch (operations) {
             case PLUS:
                 return arg1 + arg2;
             case MINUS:
@@ -16,10 +18,8 @@ public class CalculatorImplementation implements Calculator{
             case CLEAR:
                 return 0;
             case PERCENT:
-                return (arg2 / 100 * arg1);
-
-
+                return (arg1 / 100 * arg2);
         }
-        return 0;
+        return 0.0;
     }
 }

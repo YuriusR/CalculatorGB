@@ -20,4 +20,5 @@
     <string name="key_zero">0</string>
     <string name="key_comma">,</string>
     <string name="key_equals">=</string>
+    <string name="default_result">0</string>
 </resources>
