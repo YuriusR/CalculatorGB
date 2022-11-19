@@ -16,7 +16,7 @@ public abstract class CalculatorImplementation implements Calculator {
             case MULTIPLY:
                 return arg1 * arg2;
             case CLEAR:
-                return 0;
+                return 0.0;
             case PERCENT:
                 return (arg1 / 100 * arg2);
         }

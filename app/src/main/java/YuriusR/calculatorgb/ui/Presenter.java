@@ -4,8 +4,8 @@ import YuriusR.calculatorgb.modelView.Calculator;
 import YuriusR.calculatorgb.modelView.Operations;
 
 public class Presenter {
-    private final ResultView view;
-    private final Calculator calculator;
+    private ResultView view;
+    private Calculator calculator;
     private double digitOne;
     private Double digitTwo;
     private Operations selectOperator;
@@ -15,18 +15,23 @@ public class Presenter {
         this.calculator = calculator;
     }
 
-    public void onDigitPressed(int digits) {
+    /*public void onDigitPressed(int digits) {
         if (digitTwo == null) {
             digitOne = (digitOne * 10 + digits);
             view.showResult(String.valueOf(digitOne));
-        }else
+        } else
             digitTwo = digitTwo * 10 + digits;
         view.showResult(String.valueOf(digitTwo));
+    }*/
+
+    public void onDigitPressed(int digits){
+        digitOne = (digitOne * 10 + digits);
+        view.showResult(String.valueOf(digitOne));
     }
 
     public void onOperatorsPressed(Operations operations) {
         selectOperator = operations;
-        if (selectOperator !=null) {
+        if (selectOperator != null) {
             digitOne = calculator.performOperations(digitOne, digitTwo, selectOperator);
             view.showResult(String.valueOf(digitOne));
         }

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements ResultView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.grid_calculator);
+        setContentView(R.layout.constraint_calculator);
         resultUi = findViewById(result);
         presenter = new Presenter(this, new CalculatorImplementation() {
             @Override
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements ResultView {
         digits.put(R.id.key_8, 8);
         digits.put(R.id.key_9, 9);
         digits.put(R.id.key_zero, 0);
-        digits.put(R.id.key_doubleZero, 00);
+        digits.put(R.id.key_doubleZero, 0);
 
         View.OnClickListener digitClickListener = new View.OnClickListener() {
             @Override
